@@ -1,0 +1,26 @@
+<p>method-list works!</p>
+<div class ="row" >
+    <div class = "col-sm-6"  *ngFor="let currentMethod of methods">
+            <!-- <app-product-item [product]="currentProduct"></app-product-item> -->
+            <div class="card method"  >
+                <div class="card-body">
+                    <h2 class="card-title list-group-item-danger"> Methode:  {{currentMethod.name}}</h2>
+                    <!-- <ul class="list-group" *ngFor="let proc  of currentMethod.processDTOList"   > -->
+                    <ul class="list-group-item list-group-item-primary" *ngFor="let proc  of currentMethod.processDTOList"   >
+                           <h3>process name :   {{ proc.displayName }}</h3>
+                            follow up : {{ proc.followUP }} <br>
+                            Process Type  : {{ proc.processType }} <br>
+                        <li class="list-group-item list-group-item-secondary"    *ngFor="let procAct  of proc.processActivityDTOList"    >
+                                <h4> process activity : {{ procAct.name }}  </h4>
+                                <h5> liste des artefacts </h5>
+                                <ul>
+                                        <li   class="list-group-item list-group-item-success"  *ngFor="let artefact  of procAct.artifactDTOList"  >
+                                            artefact : name = {{ artefact.name }} , tag =  {{ artefact.tag }}
+                                        </li>
+                                </ul>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+    </div>
+</div>
