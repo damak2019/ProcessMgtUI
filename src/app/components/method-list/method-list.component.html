@@ -6,15 +6,16 @@
                 <div class="card-body">
                     <h2 class="card-title list-group-item-danger"> Methode:  {{currentMethod.name}}</h2>
                     <!-- <ul class="list-group" *ngFor="let proc  of currentMethod.processDTOList"   > -->
-                    <ul class="list-group-item list-group-item-primary" *ngFor="let proc  of currentMethod.processDTOList"   >
+
+                    <ul class="list-group-item list-group-item-primary" *ngFor="let proc  of currentMethod.processDTOList">
                            <h3>Process name :   {{ proc.displayName }}</h3>
                             Follow up : {{ proc.followUP }} <br>
                             Process Type  : {{ proc.processType }} <br>
-                        <li class="list-group-item list-group-item-secondary"    *ngFor="let procAct  of proc.processActivityDTOList"    >
+                        <li class="list-group-item list-group-item-secondary"    *ngFor="let procAct  of proc.processActivityDTOList">
                                 <h4> Process Activity : {{ procAct.name }}  </h4>
                                 <h5> Liste des artifacts : </h5>
                                 <ul>
-                                        <li   class="list-group-item list-group-item-success"  *ngFor="let artefact  of procAct.artifactDTOList"  >
+                                        <li   class="list-group-item list-group-item-success"  *ngFor="let artefact  of procAct.artifactDTOList">
                                             Name = {{ artefact.name }} , Tag =  {{ artefact.tag }}
                                             <br>
                                         </li>
