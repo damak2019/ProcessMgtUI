@@ -3,6 +3,7 @@ import { MethodDTO } from '../model/method-dto';
 import { map, catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { ProcessDTO } from '../model/process-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,26 @@ getMethods(): Observable<MethodDTO[]> {
 
 
 }
+
+getProcessForAProject(name : string,ptype : string,pfollow :string): Observable<ProcessDTO[]> {
+
+  return this.http.get(`${this.baseUrl}/methods/${name}/ptype/${ptype}/pfollow/${pfollow}`)
+                  .pipe(
+                        map((processArray: any[]) => processArray.map(processData => new ProcessDTO(processData)))
+                      );
+                  }
+
+
+
+// @RequestMapping(method = RequestMethod.GET, path = {"/methods/{name}/ptype/{ptype}/pfollow/{pfollow}"})
+
+// public List<ProcessDTO> listProccessByMappedNameAndProcessTypeFollow  (@PathVariable("name") String name,
+//                                                                 //  @PathVariable("pname") String pname,
+//                                                                   @PathVariable("ptype") String ptype,
+//                                                                   @PathVariable("pfollow") String pfollow) {
+//     return MethodAdapter.adaptToProcessListDTO(this.methodService.listAllProccessByMappedNameAndProcessTypeFollow(name,ptype,pfollow));
+
+// }
 
 
 // getProduct(productId: number): Observable<Product> {
