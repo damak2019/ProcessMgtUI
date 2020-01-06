@@ -5,14 +5,31 @@
             <div class="card method"  >
                 <div class="card-body">
                     <h2 class="card-title list-group-item-danger"> Methode:  {{currentMethod.name}}</h2>
+                    <button  type="submit" class="btn btn-primary" [routerLink]="['/addMethodMapping',currentMethod.id]" > add  mapping</button>
+                    <!-- {path: 'addProcess/:idMethod', component: AddProceesComponent} -->
+                    <button  type="submit" class="btn btn-primary" [routerLink]="['/addProcess',currentMethod.id]" > add  process</button>
                     <!-- <ul class="list-group" *ngFor="let proc  of currentMethod.processDTOList"   > -->
+                    <ul class="list-group-item list-group-item-primary" >
+                            <h3>Method Mappings </h3>
+                            <li class="list-group-item list-group-item-secondary"   *ngFor="let mMapping  of currentMethod.methodMappingDTOList">
+                                    <h4>  {{ mMapping.name }}  </h4>
+                            </li>
+
+                    </ul>
 
                     <ul class="list-group-item list-group-item-primary" *ngFor="let proc  of currentMethod.processDTOList">
-                           <h3>Process name :   {{ proc.displayName }}</h3>
+                           <h3>{{ proc.id }}  </h3>
+                            <h3>  Process name :   {{ proc.displayName }}</h3>
                             Follow up : {{ proc.followUP }} <br>
                             Process Type  : {{ proc.processType }} <br>
+                            <!-- {path: 'addActivity/:idMethod/process/:idProcess', component: AddProcessActivityComponent} -->
+                            <button  type="submit" class="btn btn-primary" [routerLink]="['/addActivity',currentMethod.id,'process',proc.id]" > add activity</button>
                         <li class="list-group-item list-group-item-secondary"    *ngFor="let procAct  of proc.processActivityDTOList">
-                                <h4> Process Activity : {{ procAct.name }}  </h4>
+                                <h4>  {{ procAct.id }}  </h4>
+                            <h4> Process Activity : {{ procAct.name }}  </h4>
+                                <button  type="submit" class="btn btn-primary" [routerLink]="['/addArtifact',currentMethod.id,'process',proc.id,'activity',procAct.id]" >
+                                    add Artifact to Activity
+                                </button>
                                 <h5> Liste des artifacts : </h5>
                                 <ul>
                                         <li   class="list-group-item list-group-item-success"  *ngFor="let artefact  of procAct.artifactDTOList">
@@ -26,3 +43,4 @@
             </div>
     </div>
 </div>
+

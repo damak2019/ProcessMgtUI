@@ -1,20 +1,20 @@
 import { ArtifactDTO } from './artifact-dto';
 
 export interface  ProcessActivityOptions {
-    //id?: number;
+    id?: number;
     name?: string;
     artifactDTOList?: any[];  // Pass raw data. Will be re-hydrated.
   }
 
 export class ProcessActivityDTO {
 
-    // id: number;
+     id: number;
     name: string;
 
     artifactDTOList: ArtifactDTO[];
 
     constructor(options: ProcessActivityOptions = {}) {
-     // this.id = options.id || null;
+      this.id = options.id || null;
       this.name = options.name || '';
 
       // Re-hydrate the artifacts.

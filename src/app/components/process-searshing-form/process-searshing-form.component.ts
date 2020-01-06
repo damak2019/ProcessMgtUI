@@ -40,6 +40,7 @@ listProcessAndArtifacts() {
 
 
     this.router.navigate(['method',  name, 'ptype',  pType, 'pfollow',  pFollow]);
+
   // console.log( 'formdata', formdata);
   //   const quiz = new Quiz({
   //                   title : formdata.title,

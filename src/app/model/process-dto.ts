@@ -15,7 +15,7 @@ export enum FollowUP {
 
 
 export interface  ProcessOptions {
-    //id?: number;
+    id?: number;
     displayName?: string;
     processType?: string;
     followUP?: string;
@@ -24,7 +24,7 @@ export interface  ProcessOptions {
   }
 
 export class ProcessDTO {
-    // id: number;
+    id: number;
     displayName: string;
     processType: string;
     followUP: string;
@@ -32,7 +32,7 @@ export class ProcessDTO {
     processActivityDTOList: ProcessActivityDTO[];
 
     constructor(options: ProcessOptions = {}) {
-     // this.id = options.id || null;
+      this.id = options.id || null;
       this.displayName = options.displayName || '';
       this.processType = options.processType || '';
       this.followUP = options.followUP || '';

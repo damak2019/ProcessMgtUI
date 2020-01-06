@@ -15,10 +15,10 @@ export class NavbarComponent implements OnInit {
  // logo = '/assets/logo_superquiz.png';
 
   navItems: NavItem[] = [
-   { text: 'Accueil', link: 'home' },
+   { text: 'Accueil', link: 'acceuil' },
     { text: 'Methods', link: 'methods' },
-    { text: 'Search', link: 'searchForm' },
-   { text: 'Login', link: 'login' },
+    { text: 'Required Artifacts', link: 'searchForm' },
+  // { text: 'Login', link: 'login' },
   ];
 
   constructor() { }

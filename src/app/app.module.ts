@@ -7,10 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { MethodListComponent } from './components/method-list/method-list.component';
 import { ProcessSearshFormComponent } from './process-searsh-form/process-searsh-form.component';
 import { ProcessSearshingFormComponent } from './components/process-searshing-form/process-searshing-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ListProcessComponent } from './components/list-process/list-process.component';
+import { AddMethodMappingComponent } from './components/add-method-mapping/add-method-mapping.component';
+import { AddProceesComponent } from './components/add-procees/add-procees.component';
+import { AddProcessActivityComponent } from './components/add-process-activity/add-process-activity.component';
+import { AddArtifactComponent } from './components/add-artifact/add-artifact.component';
+import { AcceuilComponent } from './components/acceuil/acceuil.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +25,18 @@ import { ListProcessComponent } from './components/list-process/list-process.com
     ProcessSearshingFormComponent,
     NavbarComponent,
     FooterComponent,
-    ListProcessComponent
+    ListProcessComponent,
+    AddMethodMappingComponent,
+    AddProceesComponent,
+    AddProcessActivityComponent,
+    AddArtifactComponent,
+    AcceuilComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [
