@@ -16,6 +16,7 @@ import { AddProceesComponent } from './components/add-procees/add-procees.compon
 import { AddProcessActivityComponent } from './components/add-process-activity/add-process-activity.component';
 import { AddArtifactComponent } from './components/add-artifact/add-artifact.component';
 import { AcceuilComponent } from './components/acceuil/acceuil.component';
+import { AddMethodComponentComponent } from './components/add-method-component/add-method-component.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AcceuilComponent } from './components/acceuil/acceuil.component';
     AddProceesComponent,
     AddProcessActivityComponent,
     AddArtifactComponent,
-    AcceuilComponent
+    AcceuilComponent,
+    AddMethodComponentComponent
   ],
   imports: [
     BrowserModule,

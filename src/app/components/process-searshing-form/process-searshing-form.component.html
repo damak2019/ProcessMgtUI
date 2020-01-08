@@ -6,7 +6,13 @@
         </div>
         <div class="form-group">
                 <label class="control-label">Process Type*</label>
-                <input formControlName="processType" type="text" class="form-control" placeholder="ARCHITECTURE">
+                <!-- <input formControlName="processType" type="text" class="form-control" placeholder="ARCHITECTURE"> -->
+
+                <select formControlName="processType" type="text" class="form-control" placeholder="ARCHITECTURE">
+                <!-- <select class="form-control"> -->
+                    <option>ARCHITECTURE</option>
+                    <option>QUALITY</option>
+                  </select>
               </div>
         <div class="form-group">
             <label class="control-label">Follow UP*</label>
@@ -15,7 +21,7 @@
 
 
 
-    <button type="submit" class="btn btn-primary">Lister Processes et Artifacts</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!searchForm.valid">Lister Processes et Artifacts</button>
         <a routerLink="..">Annuler</a>
 
       </form>

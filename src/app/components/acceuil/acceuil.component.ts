@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./acceuil.component.css']
 })
 export class AcceuilComponent implements OnInit {
-
+  ism = '/assets/procIT-ISM.png';
   constructor() { }
 
   ngOnInit() {

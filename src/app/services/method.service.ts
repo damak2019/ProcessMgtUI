@@ -17,6 +17,13 @@ constructor(private http: HttpClient,
             @Inject('BACKEND_URL')
             private baseUrl: string) { }
 
+
+addMethod(  methodDTO: MethodDTO): Observable<void> {
+
+  return  this.http.post<void>(`${this.baseUrl}/methods/`, methodDTO);
+
+}
+
 addMethodMapping( methodID: number, methodMappingDTO: MethodMappingDTO): Observable<void> {
 
   return  this.http.post<void>(`${this.baseUrl}/methods/${methodID}/methodMappings`, methodMappingDTO);
@@ -44,12 +51,12 @@ addArtifactToActivity(methodID: number, processID: number, activityID: number, a
 
 
 
+// getAllMethods(): Observable<MethodDTO[]> {
+//   return this.http.get<MethodDTO[]> ('http://localhost:9090/methods/');
+
+// }
+
 getAllMethods(): Observable<MethodDTO[]> {
-  return this.http.get<MethodDTO[]> ('http://localhost:9090/methods/');
-
-}
-
-getMethods(): Observable<MethodDTO[]> {
 
   return this.http.get(`${this.baseUrl}/methods/`)
                   .pipe(

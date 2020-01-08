@@ -8,11 +8,13 @@ import { AddProceesComponent } from './components/add-procees/add-procees.compon
 import { AddProcessActivityComponent } from './components/add-process-activity/add-process-activity.component';
 import { AddArtifactComponent } from './components/add-artifact/add-artifact.component';
 import { AcceuilComponent } from './components/acceuil/acceuil.component';
+import { AddMethodComponentComponent } from './components/add-method-component/add-method-component.component';
 
 
 const routes: Routes = [
  { path: '', redirectTo: 'acceuil', pathMatch: 'full' },
  { path: 'acceuil', component: AcceuilComponent },
+ { path: 'addMethod', component: AddMethodComponentComponent },
  { path: 'methods', component: MethodListComponent },
  { path: 'searchForm', component: ProcessSearshingFormComponent },
  {path: 'addMethodMapping/:idMethod', component: AddMethodMappingComponent},

@@ -23,7 +23,7 @@ export class ProcessSearshingFormComponent implements OnInit {
 
   ngOnInit() {
       this.searchForm = this.fb.group({
-      methodMappingName: ['Produit Agile', Validators.required],
+      methodMappingName: ['Produit Agile', Validators.required ],
       processType: ['ARCHITECTURE', Validators.required],
       followUP: ['STANDARD', Validators.required]
 });

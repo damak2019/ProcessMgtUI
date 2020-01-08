@@ -1,46 +1,60 @@
 
+<div>
+
+                <!-- <input type="search" pInputText placeholder="Search by name" (input)="dv.filter($event.target.value)"> -->
+
+
+ <button  type="submit" class="btn btn-danger" [routerLink]="['/addMethod']" > add  method</button>
 <div class ="row" >
+
+
     <div class = "col-sm-6"  *ngFor="let currentMethod of methods">
             <!-- <app-product-item [product]="currentProduct"></app-product-item> -->
             <div class="card method"  >
                 <div class="card-body">
                     <h2 class="card-title list-group-item-danger"> Methode:  {{currentMethod.name}}</h2>
-                    <button  type="submit" class="btn btn-primary" [routerLink]="['/addMethodMapping',currentMethod.id]" > add  mapping</button>
-                    <!-- {path: 'addProcess/:idMethod', component: AddProceesComponent} -->
-                    <button  type="submit" class="btn btn-primary" [routerLink]="['/addProcess',currentMethod.id]" > add  process</button>
-                    <!-- <ul class="list-group" *ngFor="let proc  of currentMethod.processDTOList"   > -->
+                    <div class="text-left">
+                            <button  type="submit" class="btn btn-primary" [routerLink]="['/addMethodMapping',currentMethod.id]" >add mapping</button>
+                    </div>
+
+
+
                     <ul class="list-group-item list-group-item-primary" >
-                            <h3>Method Mappings </h3>
+                            <h3>Method Mapping Names:</h3>
                             <li class="list-group-item list-group-item-secondary"   *ngFor="let mMapping  of currentMethod.methodMappingDTOList">
-                                    <h4>  {{ mMapping.name }}  </h4>
+                                    <h4>  {{mMapping.name}}  </h4>
                             </li>
 
                     </ul>
 
+                    <button  type="submit" class="btn btn-primary" [routerLink]="['/addProcess',currentMethod.id]" >add process</button>
+
                     <ul class="list-group-item list-group-item-primary" *ngFor="let proc  of currentMethod.processDTOList">
-                           <h3>{{ proc.id }}  </h3>
-                            <h3>  Process name :   {{ proc.displayName }}</h3>
-                            Follow up : {{ proc.followUP }} <br>
-                            Process Type  : {{ proc.processType }} <br>
+
+                            <h3>  Process name: {{ proc.displayName }}</h3>
+                            Follow up: {{ proc.followUP }} <br>
+                            Process Type: {{ proc.processType }} <br>
                             <!-- {path: 'addActivity/:idMethod/process/:idProcess', component: AddProcessActivityComponent} -->
-                            <button  type="submit" class="btn btn-primary" [routerLink]="['/addActivity',currentMethod.id,'process',proc.id]" > add activity</button>
+                            <button  type="submit" class="btn btn-secondary" [routerLink]="['/addActivity',currentMethod.id,'process',proc.id]" >add activity</button>
                         <li class="list-group-item list-group-item-secondary"    *ngFor="let procAct  of proc.processActivityDTOList">
-                                <h4>  {{ procAct.id }}  </h4>
-                            <h4> Process Activity : {{ procAct.name }}  </h4>
-                                <button  type="submit" class="btn btn-primary" [routerLink]="['/addArtifact',currentMethod.id,'process',proc.id,'activity',procAct.id]" >
+
+                            <h4> Process Activity: {{ procAct.name }}  </h4>
+                                <button  type="submit" class="btn btn-success" [routerLink]="['/addArtifact',currentMethod.id,'process',proc.id,'activity',procAct.id]" >
                                     add Artifact to Activity
                                 </button>
                                 <h5> Liste des artifacts : </h5>
                                 <ul>
                                         <li   class="list-group-item list-group-item-success"  *ngFor="let artefact  of procAct.artifactDTOList">
-                                            Name = {{ artefact.name }} , Tag =  {{ artefact.tag }}
+                                            Name: {{ artefact.name }}, Tag: {{ artefact.tag }}
                                             <br>
                                         </li>
                                 </ul>
                         </li>
+                        <br>
                       </ul>
                 </div>
             </div>
     </div>
+</div>
 </div>
 
