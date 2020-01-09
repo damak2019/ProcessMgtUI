@@ -1,24 +1,14 @@
 
+<form [formGroup]="addMappingForm" (ngSubmit)="addMappingMethod()" novalidate>
 
-  <!-- <form (ngSubmit)="onSubmit()" >
     <div class="form-group">
-      <label for="name"> Name</label>
-      <input type="text" class="form-control" id="name" required [(ngModel)]="methodMapping.name" name="name">
+      <label class="control-label">Mapping Method Name*</label>
+
+      <input formControlName="methodMappingName" type="text" class="form-control" placeholder="Saisir un mapping name">
     </div>
 
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form> -->
-
-  <form [formGroup]="searchForm" (ngSubmit)="addMappingMethod()" novalidate>
-
-        <div class="form-group">
-          <label class="control-label">Mapping Method Name*</label>
-          <input formControlName="methodMappingName" type="text" class="form-control" placeholder="Produit Agile">
-        </div>
 
 
-
-    <button type="submit" class="btn btn-primary">adding mapping</button>
-        <a routerLink="..">Annuler</a>
-
-      </form>
+    <button type="submit" class="btn btn-primary" [disabled]="!addMappingForm.valid">adding mapping</button>
+    <a  [routerLink]="['/methods']">Annuler</a>
+</form>

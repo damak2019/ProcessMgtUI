@@ -1,17 +1,17 @@
 <form [formGroup]="addArtifactForm" (ngSubmit)="addArtifactToProcessAvtivity()" novalidate>
 
-        <div class="form-group">
-          <label class="control-label"> Artifact Name*</label>
-          <input formControlName="artifactName" type="text" class="form-control" placeholder="Dossier Architecture">
-        </div>
-        <div class="form-group">
-                <label class="control-label">Artifact Tag*</label>
-                <input formControlName="artifactTag" type="text" class="form-control" placeholder="ARCHITECTURE">
-        </div>
+    <div class="form-group">
+      <label class="control-label"> Artifact Name*</label>
+      <input formControlName="artifactName" type="text" class="form-control" placeholder="Dossier Architecture">
+    </div>
+    <div class="form-group">
+            <label class="control-label">Artifact Tag*</label>
+            <input formControlName="artifactTag" type="text" class="form-control" placeholder="ARCHITECTURE">
+    </div>
 
 
 
-    <button type="submit" class="btn btn-primary">add a new artifact to the activity</button>
-        <a routerLink="..">Annuler</a>
+    <button type="submit" class="btn btn-primary" [disabled]="!addArtifactForm.valid">add a new artifact to the activity</button>
+    <a [routerLink]="['/methods']">Annuler</a>
 
-      </form>
+</form>

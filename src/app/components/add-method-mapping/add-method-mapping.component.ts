@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-//import { MethodMappingDTO } from 'src/app/model/methodMapping';
 import { MethodService } from 'src/app/services/method.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MappingMethodDTO } from 'src/app/model/mapping-method-dto';
@@ -19,10 +18,10 @@ export class AddMethodMappingComponent implements OnInit {
   methodMapping: MappingMethodDTO = new MappingMethodDTO();
 
 
-  searchForm: FormGroup;
+  addMappingForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private methodService:  MethodService,
+              private methodService: MethodService,
               private router: Router,
               private route: ActivatedRoute) {}
 
@@ -35,7 +34,7 @@ export class AddMethodMappingComponent implements OnInit {
     this.methodID   =  Number(this.route.snapshot.paramMap.get('idMethod'));
 
 
-    this.searchForm = this.fb.group({
+    this.addMappingForm = this.fb.group({
       methodMappingName: ['Produit Agile', Validators.required]
 
   });
@@ -43,7 +42,7 @@ export class AddMethodMappingComponent implements OnInit {
   addMappingMethod() {
 
 
-        const formdata = this.searchForm.value;
+        const formdata = this.addMappingForm.value;
         const name  = formdata.methodMappingName;
 
         this.methodMapping.name = name;
@@ -51,10 +50,9 @@ export class AddMethodMappingComponent implements OnInit {
         console.log(this.methodMapping);
         this.methodService.addMethodMapping(this.methodID, this.methodMapping).subscribe(
 
-          ()=>{console.log(' addMethodMapping succes');
-               this.router.navigate(['/methods'])},
-          (error )=>{console.log('UNE ERREUR est arrivée update: '+ error.error.message )}
-
+          () => {console.log(' addMethodMapping succes');
+                 this.router.navigate(['/methods']); } ,
+          (error ) => {console.log('UNE ERREUR est arrivée update: ' + error.error.message ); }
         );
 }
 

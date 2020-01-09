@@ -15,10 +15,6 @@ export class ProcessSearshingFormComponent implements OnInit {
               private methodService:  MethodService,
               private router: Router) {}
 
-  // ngOnInit() {
-
-  // }
-
 
 
   ngOnInit() {

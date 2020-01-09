@@ -1,21 +1,28 @@
 <form [formGroup]="addProcessForm" (ngSubmit)="addProcessToMethod()" novalidate>
 
-        <div class="form-group">
+    <div class="form-group">
           <label class="control-label"> Procees Display Name*</label>
           <input formControlName="processDispalyName" type="text" class="form-control" placeholder="Produit Agile">
-        </div>
-        <div class="form-group">
-                <label class="control-label">Process Type*</label>
-                <input formControlName="processType" type="text" class="form-control" placeholder="ARCHITECTURE">
-              </div>
-        <div class="form-group">
-            <label class="control-label">Follow UP*</label>
-            <input formControlName="followUP" type="text" class="form-control" placeholder="STANDARD">
-         </div>
+    </div>
+    <div class="form-group">
+          <label class="control-label">Process Type*</label>
+          <select formControlName="processType" type="text" class="form-control" placeholder="ARCHITECTURE">
+              <option>ARCHITECTURE</option>
+              <option>QUALITY</option>
+          </select>
+    </div>
+    <div class="form-group">
+          <label class="control-label">Follow UP*</label>
+          <select formControlName="followUP" type="text" class="form-control" placeholder="STANDARD">
+              <option>STANDARD</option>
+              <option>LIGHT</option>
+              <option>ENFORCED</option>
+          </select>
+      </div>
 
 
 
-    <button type="submit" class="btn btn-primary">adding Process to Method</button>
-        <a routerLink="..">Annuler</a>
+    <button type="submit" class="btn btn-primary"  [disabled]="!addProcessForm.valid">adding Process to Method</button>
+    <a  [routerLink]="['/methods']">Annuler</a>
 
-      </form>
+</form>

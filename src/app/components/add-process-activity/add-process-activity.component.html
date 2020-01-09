@@ -1,14 +1,14 @@
 <form [formGroup]="addActivityForm" (ngSubmit)="addProceesActivity()" novalidate>
 
-        <div class="form-group">
-          <label class="control-label">Acitivity Name*</label>
-          <input formControlName="processActivityName" type="text" class="form-control" placeholder="Passer en CAM">
-        </div>
+    <div class="form-group">
+      <label class="control-label">Acitivity Name*</label>
+      <input formControlName="processActivityName" type="text" class="form-control" placeholder="Saisir un nom d'activité">
+    </div>
 
 
 
-    <button type="submit" class="btn btn-primary">adding Activity to Process</button>
-        <a routerLink="..">Annuler</a>
+    <button type="submit" class="btn btn-primary" [disabled]="!addActivityForm.valid">adding Activity to Process</button>
+    <a  [routerLink]="['/methods']">Annuler</a>
 
-      </form>
+</form>
 

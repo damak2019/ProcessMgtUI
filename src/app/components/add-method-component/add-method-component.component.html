@@ -1,16 +1,14 @@
 
-  <form [formGroup]="searchForm" (ngSubmit)="addMethod()" novalidate>
+<form [formGroup]="addMethodForm" (ngSubmit)="addMethod()" novalidate>
 
-        <div class="form-group">
-          <label class="control-label">Method Name*</label>
-          <input formControlName="methodName" type="text" class="form-control" placeholder="Saisir le nom de la methode">
-        </div>
+    <div class="form-group">
+      <label class="control-label">Method Name*</label>
+      <input formControlName="methodName" type="text" class="form-control" placeholder="Saisir le nom de la methode">
+    </div>
 
 
 
-    <button type="submit" class="btn btn-primary">create a new method</button>
-        <!-- <a routerLink="..">Annuler</a> -->
-
-        <a  [routerLink]="['/methods']">Annuler</a>
-      </form>
+    <button type="submit" class="btn btn-primary" [disabled]="!addMethodForm.valid">create a new method</button>
+    <a  [routerLink]="['/methods']">Annuler</a>
+</form>
 

@@ -17,7 +17,7 @@ export class AddMethodComponentComponent implements OnInit {
   method: MethodDTO = new MethodDTO();
 
 
-  searchForm: FormGroup;
+  addMethodForm: FormGroup;
 
   constructor(private fb: FormBuilder,
               private methodService:  MethodService,
@@ -31,7 +31,7 @@ export class AddMethodComponentComponent implements OnInit {
   ngOnInit() {
 
 
-    this.searchForm = this.fb.group({
+    this.addMethodForm = this.fb.group({
       methodName: ['New Method', Validators.required]
 
   });
@@ -39,7 +39,7 @@ export class AddMethodComponentComponent implements OnInit {
   addMethod() {
 
 
-        const formdata = this.searchForm.value;
+        const formdata = this.addMethodForm.value;
         const name  = formdata.methodName;
 
         this.method.name = name;

@@ -2,7 +2,8 @@
 
         <div class="form-group">
           <label class="control-label">Mapping Method Name*</label>
-          <input formControlName="methodMappingName" type="text" class="form-control" placeholder="Produit Agile">
+          <!-- <input formControlName="methodMappingName" type="text" class="form-control" placeholder="Produit Agile"> -->
+          <input formControlName="methodMappingName" type="text" class="form-control" >
         </div>
         <div class="form-group">
                 <label class="control-label">Process Type*</label>
@@ -16,7 +17,13 @@
               </div>
         <div class="form-group">
             <label class="control-label">Follow UP*</label>
-            <input formControlName="followUP" type="text" class="form-control" placeholder="STANDARD">
+
+            <select formControlName="followUP" type="text" class="form-control" placeholder="STANDARD">
+                <option>STANDARD</option>
+                <option>LIGHT</option>
+                <option>ENFORCED</option>
+            </select>
+
          </div>
 
 
