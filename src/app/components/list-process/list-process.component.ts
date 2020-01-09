@@ -17,24 +17,18 @@ export class ListProcessComponent implements OnInit {
 
   ngOnInit() {
 
-    // const productId  = + this.route.snapshot.paramMap.get('productId');
-    //const slug  =  this.route.snapshot.paramMap.get('slug');
-
-    // const obs = this.productService.getProduct(productId);
 
     const mName  =  this.route.snapshot.paramMap.get('name');
     const pType  =  this.route.snapshot.paramMap.get('ptype');
-    const pFollow=  this.route.snapshot.paramMap.get('pfollow');
+    const pFollow =  this.route.snapshot.paramMap.get('pfollow');
 
 
     const obs = this.methodService.getProcessForAProject(mName, pType, pFollow);
 
     obs.subscribe( data => {
        this.processes = data;
-
       });
-    // this.productService.getProduct(productId)
-    // .subscribe(data => this.product = data);
+
 
   }
 

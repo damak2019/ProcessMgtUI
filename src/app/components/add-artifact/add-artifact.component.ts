@@ -38,29 +38,27 @@ export class AddArtifactComponent implements OnInit {
       artifactName: ['Dossier Architecture', Validators.required],
       artifactTag: ['Dos_Arch', Validators.required]
 
-
   });
   }
 
   addArtifactToProcessAvtivity() {
 
-
     const formdata = this.addArtifactForm.value;
     const name  = formdata.artifactName;
     const tag  = formdata.artifactTag;
 
-
+    // getting data from form
     this.artifactDTO.name = name;
     this.artifactDTO.tag = tag;
-
 
     console.log(this.artifactDTO);
 
     this.methodService.addArtifactToActivity(this.methodID,  this.processID, this.activityID, this.artifactDTO).subscribe(
 
-      () =>{console.log(' addArtifactToActivity succes');
-      this.router.navigate(['/methods'])},
-      (error ) => {console.log('UNE ERREUR est arrivée update: ' + error.error.message )}
+      () => {console.log(' addArtifactToActivity succes');
+            // back to methods after adding Artifact
+             this.router.navigate(['/methods']); },
+            (error ) => {console.log('UNE ERREUR est arrivée update: ' + error.error.message ); }
 
      );
 

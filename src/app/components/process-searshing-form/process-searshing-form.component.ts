@@ -25,9 +25,7 @@ export class ProcessSearshingFormComponent implements OnInit {
 });
 }
 listProcessAndArtifacts() {
-// Enregistre le contact sur le backend
-  // console.log(
-  // (this.quizForm.get("titre")).value);
+
 
     const formdata = this.searchForm.value;
     const name  = formdata.methodMappingName;
@@ -36,21 +34,6 @@ listProcessAndArtifacts() {
 
 
     this.router.navigate(['method',  name, 'ptype',  pType, 'pfollow',  pFollow]);
-
-  // console.log( 'formdata', formdata);
-  //   const quiz = new Quiz({
-  //                   title : formdata.title,
-  //                   description : formdata.description,
-  //                   canRetryQuestion :  formdata.canRetry,
-  // });
-
-    // this.methodService.getProcessForAProject(name,ptype,pFollow).subscribe(()=>{
-    //   // confirmation
-    //   alert('searching  ');
-    //   this.router.navigate(['/methods']);
-    // } );
-
-
 }
 
 }

@@ -1,0 +1,24 @@
+<div class="card method"  >
+        <div class="card-body">
+            <h2 class="card-title list-group-item-danger"> Methode:  {{currentMethod.name}}</h2>
+            <div class="text-left">
+                    <button  type="submit" class="btn btn-primary" [routerLink]="['/addMethodMapping',currentMethod.id]" >add mapping</button>
+            </div>
+
+            <ul class="list-group-item list-group-item-primary"  >
+
+                    <b>Method Mapping Names:</b>
+                    <li  class="list-unstyled"  *ngFor="let mMapping  of currentMethod.methodMappingDTOList">
+                        {{   mMapping.name}}
+                    </li>
+            </ul>
+
+            <button  type="submit" class="btn btn-primary" [routerLink]="['/addProcess',currentMethod.id]" >add process</button>
+
+            <ul class="list-group-item list-group-item-primary" *ngFor="let proc  of currentMethod.processDTOList">
+
+                    <app-process-item [proc]="proc"  [methodID]="currentMethod.id"  ></app-process-item>
+
+            </ul>
+        </div>
+</div>

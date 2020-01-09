@@ -19,6 +19,10 @@ import { AcceuilComponent } from './components/acceuil/acceuil.component';
 import { AddMethodComponentComponent } from './components/add-method-component/add-method-component.component';
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import {ButtonModule} from 'primeng/button';
+import { MethodItemComponent } from './components/method-item/method-item.component';
+import { ProcessItemComponent } from './components/process-item/process-item.component';
+import { ActivityItemComponent } from './components/activity-item/activity-item.component';
+import { ArtifactItemComponent } from './components/artifact-item/artifact-item.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,10 @@ import {ButtonModule} from 'primeng/button';
     AddArtifactComponent,
     AcceuilComponent,
     AddMethodComponentComponent,
+    MethodItemComponent,
+    ProcessItemComponent,
+    ActivityItemComponent,
+    ArtifactItemComponent,
   ],
   imports: [
     BrowserModule,

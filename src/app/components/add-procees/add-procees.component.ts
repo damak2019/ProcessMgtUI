@@ -23,11 +23,9 @@ export class AddProceesComponent implements OnInit {
               private route: ActivatedRoute) {}
 
 
-
   ngOnInit() {
 
     this.methodID   =  Number(this.route.snapshot.paramMap.get('idMethod'));
-
 
     this.addProcessForm = this.fb.group({
       processDispalyName: ['Processus de Validation Architecture', Validators.required],
@@ -53,8 +51,8 @@ export class AddProceesComponent implements OnInit {
     this.methodService.addProceesToMethod(this.methodID, this.processDTO).subscribe(
 
       () =>{console.log(' addProceesToMethod succes');
-      this.router.navigate(['/methods'])},
-      (error ) => {console.log('UNE ERREUR est arrivée update: ' + error.error.message )}
+            this.router.navigate(['/methods']);},
+      (error ) => {console.log('UNE ERREUR est arrivée update: ' + error.error.message ); }
 
      );
 

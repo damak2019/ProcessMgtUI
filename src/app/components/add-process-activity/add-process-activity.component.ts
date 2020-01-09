@@ -26,8 +26,6 @@ export class AddProcessActivityComponent implements OnInit {
 
 
 
-
-
   ngOnInit() {
 
     this.methodID   =  Number(this.route.snapshot.paramMap.get('idMethod'));
@@ -45,18 +43,17 @@ export class AddProcessActivityComponent implements OnInit {
         const formdata = this.addActivityForm.value;
         const name  = formdata.processActivityName;
 
-
-
         console.log( 'addProceesActivity :  methodID' , this.methodID  , 'processID ', this.processID );
 
         this.processActivityDTO.name = name;
 
         console.log(this.processActivityDTO);
+
         this.methodService.addProceesActivityToMethod(this.methodID,  this.processID, this.processActivityDTO).subscribe(
 
-          ()=>{console.log(' addProceesActivityToMethod succes');
-               this.router.navigate(['/methods'])},
-          (error )=>{console.log('UNE ERREUR est arrivée update: '+ error.error.message )}
+          () => {console.log(' addProceesActivityToMethod succes');
+                 this.router.navigate(['/methods']);},
+          (error ) => {console.log('UNE ERREUR est arrivée update: ' + error.error.message ); }
 
         );
 }

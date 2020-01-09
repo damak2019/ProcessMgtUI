@@ -1,0 +1,18 @@
+<div>
+    <b>   Activity: {{ processActivity.name }}  </b>
+    <br> <br>
+
+    <button  type="submit" class="btn btn-success" [routerLink]="['/addArtifact',methodID,'process',processID,'activity',processActivity.id]" >
+        add Artifact to Activity
+    </button>
+    <br>
+
+    <b> Liste des artifacts : </b>
+    <!-- No <ul> to avoid space adding -->
+            <li   class="list-group-item list-group-item-success"  *ngFor="let artifact  of processActivity.artifactDTOList">
+                <!--  Calling Artifact Component -->
+                <app-artifact-item [artifact]="artifact"    ></app-artifact-item>
+                <br>
+            </li>
+    <!-- </ul> -->
+</div>

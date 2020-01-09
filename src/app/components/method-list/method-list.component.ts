@@ -10,26 +10,22 @@ import { AddMethodMappingComponent } from '../add-method-mapping/add-method-mapp
 })
 export class MethodListComponent implements OnInit {
 
-  methods: MethodDTO[]=[];
+  methods: MethodDTO[] = [];
   method: MethodDTO;
   shFormAddMethodMapping = false;
-
-  // @ViewChild('addMethodMappingComp',{static: true})
-  //  addMethodMappingComp: AddMethodMappingComponent;
 
 
   constructor( private methodService: MethodService) { }
 
   ngOnInit() {
 
-    //this.methodService.getMethods()
+
     this.methodService.getAllMethods()
     .subscribe(
       data => {this.methods = data;
                console.log('methodename', this.methods[0].name );
                console.log('methodename', this.methods[0].processDTOList[0].id );
               }
-
 
       );
   }

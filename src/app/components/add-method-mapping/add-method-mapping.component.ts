@@ -26,9 +26,6 @@ export class AddMethodMappingComponent implements OnInit {
               private route: ActivatedRoute) {}
 
 
-
-
-
   ngOnInit() {
 
     this.methodID   =  Number(this.route.snapshot.paramMap.get('idMethod'));

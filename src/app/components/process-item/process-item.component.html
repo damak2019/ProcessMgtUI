@@ -1,0 +1,17 @@
+<div>
+    <b>  Process name:  {{ proc.displayName }}  </b> <br>
+    <b>Follow up: </b>{{ proc.followUP }} <br>
+    <b>Process Type: </b> {{ proc.processType }} <br> <br>
+
+    <!-- Corresponding Path in Router
+    {path: 'addActivity/:idMethod/process/:idProcess', component: AddProcessActivityComponent} -->
+    <button  type="submit" class="btn btn-secondary" [routerLink]="['/addActivity',methodID,'process',proc.id]" >add activity to process</button>
+    <!--  No <ul> to avoid space adding-->
+    <li class="list-group-item list-group-item-secondary"    *ngFor="let procAct  of proc.processActivityDTOList">
+        <!--  Calling  ActivityItemComponent  -->
+        <app-activity-item [processActivity]="procAct"  [methodID]="methodID"  [processID]="proc.id"  ></app-activity-item>
+    </li>
+    <!-- </ul> -->
+    <br>
+</div>
+

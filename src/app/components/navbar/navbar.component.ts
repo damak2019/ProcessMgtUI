@@ -12,13 +12,13 @@ interface NavItem {
 })
 export class NavbarComponent implements OnInit {
   logo = '/assets/bnp.jpg';
- // logo = '/assets/logo_superquiz.png';
+
 
   navItems: NavItem[] = [
-   { text: 'Accueil', link: 'acceuil' },
+    { text: 'Accueil', link: 'acceuil' },
     { text: 'Methods', link: 'methods' },
     { text: 'Required Artifacts', link: 'searchForm' },
-  // { text: 'Login', link: 'login' },
+
   ];
 
   constructor() { }
