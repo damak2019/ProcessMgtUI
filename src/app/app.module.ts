@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MethodListComponent } from './components/method-list/method-list.component';
-import { ProcessSearshFormComponent } from './process-searsh-form/process-searsh-form.component';
 import { ProcessSearshingFormComponent } from './components/process-searshing-form/process-searshing-form.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -28,7 +27,7 @@ import { ArtifactItemComponent } from './components/artifact-item/artifact-item.
   declarations: [
     AppComponent,
     MethodListComponent,
-    ProcessSearshFormComponent,
+   // ProcessSearshFormComponent,
     ProcessSearshingFormComponent,
     NavbarComponent,
     FooterComponent,
