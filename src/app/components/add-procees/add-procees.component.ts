@@ -18,7 +18,7 @@ export class AddProceesComponent implements OnInit {
   addProcessForm: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private methodService:  MethodService,
+              private methodService: MethodService,
               private router: Router,
               private route: ActivatedRoute) {}
 
@@ -50,14 +50,12 @@ export class AddProceesComponent implements OnInit {
     console.log(this.processDTO);
     this.methodService.addProceesToMethod(this.methodID, this.processDTO).subscribe(
 
-      () =>{console.log(' addProceesToMethod succes');
-            this.router.navigate(['/methods']);},
+      () => {console.log(' addProceesToMethod succes');
+             this.router.navigate(['/methods']); },
       (error ) => {console.log('UNE ERREUR est arrivée update: ' + error.error.message ); }
 
      );
 
 }
-
-
 
 }

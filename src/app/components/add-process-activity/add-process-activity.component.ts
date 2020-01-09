@@ -31,12 +31,11 @@ export class AddProcessActivityComponent implements OnInit {
     this.methodID   =  Number(this.route.snapshot.paramMap.get('idMethod'));
     this.processID   =  Number(this.route.snapshot.paramMap.get('idProcess'));
 
-
     this.addActivityForm = this.fb.group({
       processActivityName: ['Passer en CAM', Validators.required]
-
-  });
+    });
   }
+
   addProceesActivity() {
 
 
@@ -52,12 +51,10 @@ export class AddProcessActivityComponent implements OnInit {
         this.methodService.addProceesActivityToMethod(this.methodID,  this.processID, this.processActivityDTO).subscribe(
 
           () => {console.log(' addProceesActivityToMethod succes');
-                 this.router.navigate(['/methods']);},
+                 this.router.navigate(['/methods']); },
           (error ) => {console.log('UNE ERREUR est arrivée update: ' + error.error.message ); }
 
         );
-}
-
-
+  }
 
 }
