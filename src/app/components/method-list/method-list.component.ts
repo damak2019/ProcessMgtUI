@@ -11,6 +11,7 @@ import { AddMethodMappingComponent } from '../add-method-mapping/add-method-mapp
 export class MethodListComponent implements OnInit {
 
   methods: MethodDTO[]=[];
+  method: MethodDTO;
   shFormAddMethodMapping = false;
 
   // @ViewChild('addMethodMappingComp',{static: true})

@@ -17,6 +17,8 @@ import { AddProcessActivityComponent } from './components/add-process-activity/a
 import { AddArtifactComponent } from './components/add-artifact/add-artifact.component';
 import { AcceuilComponent } from './components/acceuil/acceuil.component';
 import { AddMethodComponentComponent } from './components/add-method-component/add-method-component.component';
+import {AutoCompleteModule} from 'primeng/autocomplete';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -32,14 +34,16 @@ import { AddMethodComponentComponent } from './components/add-method-component/a
     AddProcessActivityComponent,
     AddArtifactComponent,
     AcceuilComponent,
-    AddMethodComponentComponent
+    AddMethodComponentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AutoCompleteModule,
+    ButtonModule
   ],
   providers: [
     {provide : 'BACKEND_URL' , useValue : 'http://localhost:9090' }
