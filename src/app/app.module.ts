@@ -27,7 +27,6 @@ import { ArtifactItemComponent } from './components/artifact-item/artifact-item.
   declarations: [
     AppComponent,
     MethodListComponent,
-   // ProcessSearshFormComponent,
     ProcessSearshingFormComponent,
     NavbarComponent,
     FooterComponent,

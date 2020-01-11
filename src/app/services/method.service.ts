@@ -51,11 +51,6 @@ addArtifactToActivity(methodID: number, processID: number, activityID: number, a
 
 
 
-// getAllMethods(): Observable<MethodDTO[]> {
-//   return this.http.get<MethodDTO[]> ('http://localhost:9090/methods/');
-
-// }
-
 getAllMethods(): Observable<MethodDTO[]> {
 
   return this.http.get(`${this.baseUrl}/methods/`)
@@ -73,36 +68,6 @@ getProcessForAProject(name : string,ptype : string,pfollow :string): Observable<
                         map((processArray: any[]) => processArray.map(processData => new ProcessDTO(processData)))
                       );
                   }
-
-
-
-// @RequestMapping(method = RequestMethod.GET, path = {"/methods/{name}/ptype/{ptype}/pfollow/{pfollow}"})
-
-// public List<ProcessDTO> listProccessByMappedNameAndProcessTypeFollow  (@PathVariable("name") String name,
-//                                                                 //  @PathVariable("pname") String pname,
-//                                                                   @PathVariable("ptype") String ptype,
-//                                                                   @PathVariable("pfollow") String pfollow) {
-//     return MethodAdapter.adaptToProcessListDTO(this.methodService.listAllProccessByMappedNameAndProcessTypeFollow(name,ptype,pfollow));
-
-// }
-
-
-// getProduct(productId: number): Observable<Product> {
-// return this.http.get(`${this.baseUrl}/products/${productId}`)
-// .pipe(
-// map((productData: any) => new Product(productData)),
-// catchError(this.muteRequestError),
-// );
-//}
-
-
-
-
-// saveProduct(product: Product): Observable<any> {
-// const url = `${this.baseUrl}/products` + (product.id ? `/${product.id}` : '');
-// const method = product.id ? 'put' : 'post';
-// return this.http.request(method, url, {body: product});
-// }
 
 
 
